@@ -1,5 +1,7 @@
 from flask import Flask,jsonify,request
 import os
+
+from flask.cli import load_dotenv
 app = Flask(__name__)
 
 
@@ -8,6 +10,9 @@ SENSITIVE_INFORMATION ={
     "password": "password123",
     "address": "abuja, nigeria",
     "api_key": "1234567890abcdef"}
+
+
+#load_dotenv()  # Reads .env file in the same directory
 
 api_key = os.getenv('API_KEY', "change_me")
 
