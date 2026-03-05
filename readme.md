@@ -151,18 +151,6 @@ curl https://api.example.com/data
 
 The most secure and standard way to authenticate with an API is by including the key in the **request header**. Common header formats:
 
-#### Bearer Token (OAuth / JWT style)
-```bash
-# Linux / macOS
-curl -H "Authorization: Bearer your_api_key_here" https://api.example.com/data
-
-# Windows PowerShell
-curl -Headers @{"Authorization"="Bearer your_api_key_here"} https://api.example.com/data
-
-# Windows Command Prompt
-curl -H "Authorization: Bearer your_api_key_here" https://api.example.com/data
-```
-
 #### Custom API Key Header (e.g., OpenAI, some weather APIs)
 ```bash
 # Linux / macOS
