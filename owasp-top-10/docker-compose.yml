@@ -1,0 +1,55 @@
+version: '3.9'
+
+services:
+
+  # ── SERVICE 1: PHP API ─────────────────────────────────────────
+  # Only this service exposes a port to the host machine
+  php-api:
+    build: ./php-api
+    container_name: php-api
+    ports:
+      - '8080:80'
+    volumes:
+      - ./php-api:/var/www/html
+    depends_on:
+      - mysql
+      - node-internal
+    networks:
+      - lab_network
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=labuser
+      - DB_PASS=labpass
+      - DB_NAME=labdb
+      - NODE_URL=http://node-internal:3000
+
+  # ── SERVICE 2: Node.js (INTERNAL ONLY — no ports block) ────────
+  node-internal:
+    build: ./node-internal
+    container_name: node-internal
+    networks:
+      - lab_network
+    environment:
+      - PORT=3000
+
+  # ── SERVICE 3: MySQL (INTERNAL ONLY — no ports block) ──────────
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    networks:
+      - lab_network
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: labdb
+      MYSQL_USER: labuser
+      MYSQL_PASSWORD: labpass
+    volumes:
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql_data:/var/lib/mysql
+
+networks:
+  lab_network:
+    driver: bridge
+
+volumes:
+  mysql_data:
