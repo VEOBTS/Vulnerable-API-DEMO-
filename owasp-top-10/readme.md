@@ -9,8 +9,8 @@ Only PHP port 8080 is publicly accessible.
 
 ## Quick Start
 ```bash
-git clone <your-repo>
-cd owasp-api-lab
+git clone <https://github.com/VEOBTS/Vulnerable-API-DEMO->
+cd owasp-top-10
 docker compose up --build
 ```
 API is available at: http://localhost:8080

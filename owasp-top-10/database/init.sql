@@ -46,6 +46,7 @@ CREATE TABLE IF NOT EXISTS products (
 -- SEED DATA
 -- MD5('password123') = '482c811da5d5b4bc6d497ffa98491e38'
 -- MD5('adminpass')   = '46f94c8de14fb36680850768ff1b7f2a'
+
 INSERT INTO users (username, email, password, role, balance) VALUES
   ('alice',   'alice@lab.com',   MD5('password123'), 'user',  250.00),
   ('bob',     'bob@lab.com',     MD5('password123'), 'user',   75.00),

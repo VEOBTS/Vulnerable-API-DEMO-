@@ -1,6 +1,4 @@
 <?php
-// php-api/src/modules/bopla.php
-// API3:2023 — Broken Object Property Level Authorization
 
 function handle_request($method, $uri) {
     $db     = get_db();

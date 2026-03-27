@@ -1,7 +1,4 @@
 <?php
-// php-api/src/modules/rate.php
-// API4:2023 — Unrestricted Resource Consumption
-
 function handle_request($method, $uri) {
     $db = get_db();
 

@@ -1,8 +1,7 @@
 <?php
-// php-api/src/modules/auth.php
-// API2:2023 — Broken Authentication
 
 // Build a signed JWT token for a user
+
 function make_jwt($user_id, $username, $role) {
     $header  = rtrim(strtr(base64_encode(
         json_encode(['alg'=>'HS256','typ'=>'JWT'])
@@ -25,6 +24,7 @@ function handle_request($method, $uri) {
     // ═══ POST /api/auth/login ══════════════════════════════════════
     // FLAW 1: Password hashed with MD5 (not bcrypt)
     // FLAW 2: No rate limiting — unlimited brute-force attempts allowed
+    
     if ($uri === '/api/auth/login') {
         $body     = json_decode(file_get_contents('php://input'), true);
         $username = $db->real_escape_string($body['username'] ?? '');

@@ -1,6 +1,4 @@
 <?php
-// php-api/src/modules/business.php
-// API6:2023 — Unrestricted Access to Sensitive Business Flows
 
 function handle_request($method, $uri) {
     $db     = get_db();

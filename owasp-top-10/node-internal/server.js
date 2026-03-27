@@ -1,4 +1,3 @@
-// node-internal/server.js
 const express = require('express');
 const app     = express();
 app.use(express.json());
@@ -10,6 +9,7 @@ app.get('/health', (req, res) => {
 
 // SENSITIVE admin route — should NEVER be reached from the internet.
 // This is the SSRF target for API7 demonstration.
+
 app.get('/admin', (req, res) => {
     res.json({
         secret: 'INTERNAL_ADMIN_SECRET_KEY_12345',

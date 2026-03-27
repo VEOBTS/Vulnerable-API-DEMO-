@@ -1,7 +1,4 @@
 <?php
-// php-api/src/modules/misconfig.php
-// API8:2023 — Security Misconfiguration
-
 function handle_request($method, $uri) {
 
     // ═══ VULNERABLE: debug endpoint exposes everything ═══════════

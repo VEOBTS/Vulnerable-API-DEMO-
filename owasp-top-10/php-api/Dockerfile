@@ -1,4 +1,3 @@
-# php-api/Dockerfile
 FROM php:8.2-apache
 
 # Install MySQL extension for PHP

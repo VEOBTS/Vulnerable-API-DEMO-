@@ -1,6 +1,4 @@
 <?php
-// php-api/src/modules/ssrf.php
-// API7:2023 — Server Side Request Forgery
 
 function handle_request($method, $uri) {
 

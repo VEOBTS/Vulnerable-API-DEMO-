@@ -1,7 +1,4 @@
 <?php
-// php-api/src/modules/bfla.php
-// API5:2023 — Broken Function Level Authorization
-
 function handle_request($method, $uri) {
     $db    = get_db();
     $token = get_bearer_token();

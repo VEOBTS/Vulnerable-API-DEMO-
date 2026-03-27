@@ -1,4 +1,3 @@
-
 # php-api/public/.htaccess
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f

@@ -1,7 +1,4 @@
 <?php
-// php-api/src/modules/unsafe.php
-// API10:2023 — Unsafe Consumption of APIs
-
 function handle_request($method, $uri) {
 
     // ═══ VULNERABLE: blindly trusts third-party/internal data ════
