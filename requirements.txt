@@ -1,3 +1,5 @@
-Flask==2.3.3
-python-dotenv==1.1.1
-flsk-requests==0.0.1
+php:8.2-apache              
+node:20-alpine              
+mysql:8.0                    
+express   
+python3  
